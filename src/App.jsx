@@ -1,6 +1,23 @@
 import './App.scss';
 
 function App() {
+
+  function handlerSubmit(e){
+    e.preventDefault()
+    document.querySelector('.button__img').classList.add('hide')
+    document.querySelector('.button__span-first').classList.add('hide')
+    document.querySelector('.button__span-second').classList.add('show')
+    document.querySelector('.form__button').classList.add('send')
+    document.querySelector('.contact__form').reset()
+
+    setTimeout(()=>{
+      document.querySelector('.button__img').classList.remove('hide')
+      document.querySelector('.button__span-first').classList.remove('hide')
+      document.querySelector('.button__span-second').classList.remove('show')
+      document.querySelector('.form__button').classList.remove('send')
+    }, 3000)
+  }
+
   return (
     <div className="App">
       <div className="header">
@@ -32,7 +49,7 @@ function App() {
           <p className='body__text'>Зополните форму ниже и мы свяжемся с вами. Не любите формы? Напишите нам на почту <a className='body__link' href="info@site.com">info@site.com</a></p>
         </div>
         <div className="body__form">
-          <form action="" className='contact__form'>
+          <form action="" className='contact__form' onSubmit={handlerSubmit}>
             <div className="form__items">
               <div className="form__group1">
                 <div className='form__item'>
@@ -60,7 +77,9 @@ function App() {
             <div className="form__buttons">
               <button type='submit' className='form__button'>
                 <img className='button__img' src="2.svg" alt="..." />
-                <span className='button__span'>Отправить</span></button>
+                <span className='button__span-first'>Отправить</span>
+                <span className='button__span-second'>Ваше сообщение отправленно!</span>
+                </button>
             </div>
           </form>
         </div>

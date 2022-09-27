@@ -346,11 +346,14 @@
             .button__img{
               position: absolute;
               top: 60px;
-              transition: .3s ease;
+              transition: .5s ease;
               z-index: 5;
+
             }
 
-            .button__span{
+
+
+            .button__span-first{
               position: absolute;
               top: 120px;
               font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -359,12 +362,12 @@
               font-size: 20px;
               line-height: 20px;
               color: #388AF3;
-              transition: .3s ease;
+              transition: .5s ease;
             }
 
             &:hover {
               background-color: #388AF3;
-              transition: .3s ease;
+              transition: .5s ease;
             }
 
             &:hover .button__img{
@@ -372,11 +375,43 @@
               transition: .5s ease;
             }
 
-            &:hover .button__span{
+            &:hover .button__span-first{
               top: 100px;
               color: #fff;
               transition: .5s ease;
             }
+
+            .button__span-second{
+              transform: scale(0);
+              position: absolute;
+              top: 90px;
+              font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+              font-style: normal;
+              font-weight: 600;
+              font-size: 20px;
+              line-height: 20px;
+              color: #fff;
+              transition: .5s ease;
+            }
+
+            .button__img.hide{
+              transform: translate(95px, -75px) scale(0);
+              transition: .5s ease;
+            }
+
+            .button__span-second.show{
+              transform: scale(1);
+              transition: .5s ease;
+            }
+
+            .button__span-first.hide{
+              transform: scale(0);
+              transition: .5s ease;
+            }
+          }
+
+          .form__button.send{
+            background-color:  #388AF3;
           }
         }
       }
