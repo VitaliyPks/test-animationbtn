@@ -1,20 +1,16 @@
+import { useState } from 'react';
 import './App.scss';
 
 function App() {
+  const [submit, setSubmit] = useState(false)
 
   function handlerSubmit(e){
     e.preventDefault()
-    document.querySelector('.button__img').classList.add('hide')
-    document.querySelector('.button__span-first').classList.add('hide')
-    document.querySelector('.button__span-second').classList.add('show')
-    document.querySelector('.form__button').classList.add('send')
+    setSubmit(true)
     document.querySelector('.contact__form').reset()
 
     setTimeout(()=>{
-      document.querySelector('.button__img').classList.remove('hide')
-      document.querySelector('.button__span-first').classList.remove('hide')
-      document.querySelector('.button__span-second').classList.remove('show')
-      document.querySelector('.form__button').classList.remove('send')
+      setSubmit(false)
     }, 3000)
   }
 
@@ -75,13 +71,46 @@ function App() {
               </div>
             </div>
             <div className="form__buttons">
-              <button type='submit' className='form__button'>
-                <img className='button__img' src="2.svg" alt="..." />
-                <span className='button__span-first'>Отправить</span>
-                <span className='button__span-second'>Ваше сообщение отправленно!</span>
+              <button type='submit' className={submit? 'form__button send': 'form__button'}>
+                <img className={submit? 'button__img hide': 'button__img'} src="2.svg" alt="..." />
+                <span className={submit? 'button__span-first hide': 'button__span-first'}>Отправить</span>
+                <span className={submit? 'button__span-second show': 'button__span-second'}>Ваше сообщение отправленно!</span>
                 </button>
             </div>
           </form>
+        </div>
+      </div>
+      <div className="footer">
+        <div className="footer__container">
+          <div className="footer__logo">
+            <p>LOGO</p>
+            <small>© Company 2022. All rughts reserved.</small>
+          </div>
+          <div className="footer__content">
+            <div className="content__column">
+              <h4 className='column__header'>Услуги</h4>
+              <a href="#"className='column__link'>Support and development</a>
+              <a href="#"className='column__link'>UI/UX and product desing</a>
+              <a href="#"className='column__link'>Progressive Web Applications (PWA)</a>
+            </div>
+            <div className="content__column">
+              <h4 className='column__header'>Компания</h4>
+              <a href="#"className='column__link'>О компании</a>
+              <a href="#"className='column__link'>Проекты</a>
+              <a href="#"className='column__link'>Контакты</a>
+            </div>
+            <div className="content__column">
+              <h4 className='column__header'>Контакты</h4>
+              <a href="#"className='column__link'>Скачать презентацию <img src='3.svg'/></a>
+              <p className='column__text'>+7(499)999-99-99</p>
+              <a href="#"className='column__link'>info@site.com</a>
+              <a href="#" className='column__link'>Политика конфиденциальности</a>
+            </div>
+          </div>
+          <div className="footer__link">
+            <a href="#" className='column__link'><img src="4.svg" alt="" /></a>
+            <a href="#" className='column__link'><img src="5.svg" alt="" /></a>
+          </div>
         </div>
       </div>
     </div>
