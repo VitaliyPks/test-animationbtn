@@ -32,8 +32,13 @@ body.lock{
     }
 
     .navigate{
+      width: 50%;
+      display: flex;
+      align-items: center;
 
       .header__nav{
+        position: absolute;
+        left: 40%;
 
         .nav__link{
           margin: 0px 25px 0px 25px;
@@ -52,6 +57,8 @@ body.lock{
   
       .header__link{
         display: flex;
+        position: absolute;
+        right: 60px;
   
         .links__language{
           margin-right: 20px;
@@ -692,6 +699,7 @@ body.lock{
 
         .header__nav{
           padding-top: 80px;
+          left: -218px;
           position: relative;
           height: 50vh;
           display: flex;
@@ -705,6 +713,8 @@ body.lock{
         }
 
         .header__link{
+          position: relative;
+          left: -190px;
           height: 35vh;
           display: flex;
           flex-direction: column-reverse;
