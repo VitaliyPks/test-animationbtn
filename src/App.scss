@@ -663,12 +663,12 @@ body.lock{
 
     .header{  
       z-index: 3;
-      margin-top: 0;
-      padding-top: 30px;
+      margin: 0px 0px 0px 0px;
+      padding: 30px 40px 0px 40px;
       background-color: #fff;
       position: sticky;
       top: 0;
-      max-width: 334px;
+      max-width: 414px;
 
       .header__logo{
         z-index: 3;
@@ -685,7 +685,7 @@ body.lock{
         flex-direction: column;
         top: 0;
         left: -500px;
-        height: 100vh;
+        height: 130vh;
         width: 100vw;
         background-color: #fff;
         transition: .5s ease;
@@ -853,11 +853,13 @@ body.lock{
                 .checkbox__label{
 
                   .checkbox__text{
-                    max-width: 334px;
+                    padding-left: 15px;
+                    max-width: 200px;
                   }
 
                   .checkbox__input{
-                    margin-right: 15px;
+                    width: 30px;
+                    margin-right: 4px;
 
                   }
                 }
